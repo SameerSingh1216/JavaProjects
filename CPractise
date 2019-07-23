@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <graphics.h>
+//#define MAX_STRING_SIZE 20
+
+int main()
+{
+    char str[20];
+    char strRev[20];
+    int j=0;
+  // printf("Hello World");
+    printf("Enter the String: ");
+    fgets(str,20,stdin);
+    printf("Original String: %s",str);
+    // int k = strlen(str);
+    // for (int i= (k-1); i>=0; i--)
+    // {
+    //     strRev[j]=str[i];
+    //     j++;
+    // }
+    strcpy(strRev,str);
+    strrev(strRev);
+    
+    printf("reversed string: %s\n",strRev);
+    printf("value of comparision s1 and s2 : %d", strcmp(str,strRev));
+    if(strcmp(str,strRev)==0)
+    {
+        printf("Palindrome strings %s,%s",str,strRev);
+    }
+    scanf();
+    
+    // C program to demonstrate 
+// example of strrev() function 
+
+
+return 0; 
+
+}
