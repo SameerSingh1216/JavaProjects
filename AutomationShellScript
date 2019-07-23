@@ -1,0 +1,21 @@
+#!/bin/bash
+MAXDISTANCEMM = 2390 
+MAXROTATIONDEGREES = 360
+echo "Hi, Enter unit movement and unit rotation"
+read -p 'unit distance: ' unitDistance
+read -p 'unit rotation: ' unitRotation
+#Considering the result will be in int
+numberOfMovements = MAXDISTANCEMM/unitDistance
+#The Remaining distance calculation
+remainingDistance = MAXDISTANCEMM-numberOfMovements*unitDistance 
+
+for (( i=1 ; i <= $numberOfMovements ; i++ )) ; do
+#Movement and Rotation of Sensor
+sudo python3 ./hetbus_demo_go_to_dist_ang.py $unitDistance $unitRotation;
+sleep 2
+#collect Data and form File
+done
+
+#For remaining distance movement...Movement and Rotation of Sensor
+sudo python3 ./hetbus_demo_go_to_dist_ang.py $remainingDistance $unitRotation;
+##For remaining distance movement...collect Data and form File
